@@ -16,18 +16,35 @@ As an example, we use [AMP consortium’s Phase 1 RA data from ](https://immunog
 
 DiSiR only needs three input files:  1) single-cell gene expression matrix 2) cell type annotations and 3) list of desired ligand-receptor interactions at subunit level. In the 'DiSiR_main.py' file, the paths to input and output files need to be set as well as few parameters as follows.
 
-### Paths to ST files:
+### Path to gene expression matrix file:
+
+Path to input gene expression matrix which has been assumed in a format of MatrixMarket (or mtx) file. 
 
 ```python
 
-# Path to spatial transcriptomics data (gene expression matrix) 
-ST_path = '.../TCGA_ST_crc_10x_tpm.fullIDs.remapped.csv'
-
-# Path to spatial transcriptomics data (x-y coordinates) 
-coordinates_path = '.../Coordinates.csv'
+# Path to input gene expression matrix
+scRNA_path = indir + '/matrix.mtx'
 
 ```
-The formats of these two files are as below:
 
-1. ST data:
+### Path to genes list file:
 
+Path to the text file that contains gene names assoctiated with the input gene expression matrix. 
+
+```python
+
+# Path to names of all genes in gene expression matrix
+gene_names_all_path = indir + '/genes.txt'
+
+```
+
+### Path to meta data file:
+
+Path to the text file that contains gene names assoctiated with the input gene expression matrix. 
+
+```python
+
+# Path to metadata file
+metadata_path = indir + '/categorical_coloring_data.json'
+
+```
