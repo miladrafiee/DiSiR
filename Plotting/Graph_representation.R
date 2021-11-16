@@ -8,7 +8,7 @@ library(RColorBrewer)
 #################################################################################
 nodes <- read.csv('~/cloud-data/cloud-pipeline-milad-storage/CATS/Aug_2_healthy_disease/Results/COVID/graph_data/Nodes.csv', header=T, as.is=T)
 links <- read.csv('~/cloud-data/cloud-pipeline-milad-storage/CATS/Aug_2_healthy_disease/Results/COVID/graph_data/Links.csv', header=T, as.is=T)
-interactions_raw <- read.csv('~/cloud-data/cloud-pipeline-milad-storage/CATS/For_Naouel/RA_Data/Subunit_interactions_all.csv', header = FALSE)
+interactions_raw <- read.csv('~/cloud-data/cloud-pipeline-milad-storage/CATS/For_Naouel/RA_Data/Input_interactions_list.csv', header = FALSE)
 # interactions_raw <- read.csv('~/cloud-data/cloud-pipeline-milad-storage/IL1RAP_data/Subunit_interactions_Andre.csv', header = FALSE)
 interactions_raw <- data.frame(interactions_raw[2,])
 
