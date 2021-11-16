@@ -71,4 +71,4 @@ DiSiR visualizes output cell-cell interactions in two ways: graph representation
 
 Heatmap plots illustrate all interactions between different cell types listed in rows and columns of the heatmaps. The thickness of links in graph representation and the color intensity in heatmap representation are associated with the strength of interactions between cell types.
 
-<img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/Results.png" width="1000">
+<img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/results.png" width="1000">
