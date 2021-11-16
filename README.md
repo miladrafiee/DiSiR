@@ -10,7 +10,7 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 
 ## DiSiR test example use
 
-As an example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL6 pathway)  [here](https://drive.google.com/drive/folders/1j6TlTqEmrCeVED2Ld3GtNbvMdzmPjMMN?usp=sharing).
+As an example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL6 pathway)  [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
 
 <img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/Ease_of_use.png" width="1000">
 
