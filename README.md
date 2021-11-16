@@ -10,11 +10,11 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 
 ## DiSiR test example use
 
-As an example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list and meta data [here](https://drive.google.com/drive/folders/1j6TlTqEmrCeVED2Ld3GtNbvMdzmPjMMN?usp=sharing).
+As an example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL6 pathway)  [here](https://drive.google.com/drive/folders/1j6TlTqEmrCeVED2Ld3GtNbvMdzmPjMMN?usp=sharing).
 
 <img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/Ease_of_use.png" width="1000">
 
-DiSiR only needs three input files:  1) single-cell gene expression matrix 2) cell type annotations and 3) list of desired ligand-receptor interactions at subunit level. In the 'DiSiR_main.py' file, the paths to input and output files need to be set as well as few parameters as follows.
+DiSiR only needs three input files:  1) single-cell gene expression matrix with its corresponding gene names 2) cell type annotations and 3) list of desired ligand-receptor interactions at subunit level. In the 'DiSiR_main.py' file, the paths to input and output files need to be set as well as few parameters as follows.
 
 ### Path to gene expression matrix file:
 
@@ -48,3 +48,23 @@ Path to the text file that contains gene names assoctiated with the input gene e
 metadata_path = indir + '/categorical_coloring_data.json'
 
 ```
+
+### Input interactions list
+
+`iterations` - In addition, user needs to provide a "comma-separated interaction file" (in our example, "input_interactions_list.csv"") that contains one interaction per line, for example: IL6 | IL6,IL6 | IL6ST. In this example, IL6R and IL6ST are two receptor subunits of IL6. 
+ 
+Also, a path to an "output directory", in order to save the DiSiR results, needs to be identified by users.
+
+### Other parameters
+
+ - `threshold_numbers` - Threshold on the fraction of cells expressed each ligand or receptor per cell type
+ 
+ - `threshold_expressions` - Threshold on scaled (max-normalized) average expression of each ligand or receptor within a cell type
+  
+ - `threshold` - Threshold on q-value for filtering non-significant LR interactions
+   
+ - `iterations` - Number of iterations for permutating data in statistical test
+ 
+### Plot output results
+
+In DiSiR, we visualize output cell-cell interactions in two ways: graph representation and heatmap plots. Graph representation is made of a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment. Heatmap plots illustrate all interactions (including above threshold interactions) between different cell types listed in rows and columns of the heatmaps. The thickness of links in graph representation and the color intensity in heatmap representation are associated with the strength of interactions between cell types. 
