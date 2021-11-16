@@ -51,20 +51,24 @@ metadata_path = indir + '/categorical_coloring_data.json'
 
 ### Input interactions list
 
-`iterations` - In addition, user needs to provide a "comma-separated interaction file" (in our example, "input_interactions_list.csv"") that contains one interaction per line, for example: IL6 | IL6,IL6 | IL6ST. In this example, IL6R and IL6ST are two receptor subunits of IL6. 
+`iterations` - In addition, user needs to provide a "comma-separated interaction file" (in our example, "Input_interactions_list.csv") that contains one interaction per line, for example: IL6 | IL6,IL6 | IL6ST. In this example, IL6R and IL6ST are two receptor subunits of IL6. 
  
 Also, a path to an "output directory", in order to save the DiSiR results, needs to be identified by users.
 
 ### Other parameters
 
- - `threshold_numbers` - Threshold on the fraction of cells expressed each ligand or receptor per cell type
+ - `threshold_numbers` - Threshold on the fraction of cells expressed each ligand or receptor per cell type (default = 0)
  
- - `threshold_expressions` - Threshold on scaled (max-normalized) average expression of each ligand or receptor within a cell type
+ - `threshold_expressions` - Threshold on scaled (max-normalized) average expression of each ligand or receptor within a cell type (default = 0)
   
- - `threshold` - Threshold on q-value for filtering non-significant LR interactions
+ - `threshold` - Threshold on q-value for filtering non-significant LR interactions (default = 0.05)
    
- - `iterations` - Number of iterations for permutating data in statistical test
+ - `iterations` - Number of iterations for permutating data in statistical test (default = 100)
  
 ### Plot output results
 
-In DiSiR, we visualize output cell-cell interactions in two ways: graph representation and heatmap plots. Graph representation is made of a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment. Heatmap plots illustrate all interactions (including above threshold interactions) between different cell types listed in rows and columns of the heatmaps. The thickness of links in graph representation and the color intensity in heatmap representation are associated with the strength of interactions between cell types. 
+DiSiR visualizes output cell-cell interactions in two ways: graph representation and heatmap plots. The outputs of running "DiSiR_main.py" are the links and nodes of the resulting interaction interaction graph at cell type level, and heatmap plots for all and significant interactions. Using "links.csv" and "Nodes.csv" (along with "Input_interactions_list.csv") files as the inputs of the "Graph_representation.R" script, which is located in the "Plotting" directory, users can generate a directed graph in which nodes are associated with the cell types present in the input data set and each edge corresponds to a ligand–receptor interaction between two cell types (from ligand-expressing cells to receptor-expressing cells). For a given interaction, if both ligand and receptor are present in the same cell type, then there is a self-loop in the graph on the corresponding node. We use the “visNetwork version 2.1.0” package in R version 4.0.0 with an interactive environment. 
+
+Heatmap plots illustrate all interactions between different cell types listed in rows and columns of the heatmaps. The thickness of links in graph representation and the color intensity in heatmap representation are associated with the strength of interactions between cell types.
+
+<img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/results.png" width="1000">
