@@ -6,11 +6,13 @@
 
 This repository contains the codes used for the implementation and evaluation of our method and one case study in applying it.
 
-The primary implementation is in Python 3. To see usage example of DiSiR keep reading, and also look in the Python-module and Analysis directories. Also, the scripts to plot graph representation of resulting ligand-receptor interactions at cell type level are located in  plotting folder. In order to identify ligand-receptor interactions, 'DiSiR_main.py' script in the Python-module directory needs to be run. Below is an usage example for analyzing IL6 signaling pathway in rheumatoid arthritis (RA) Synovium scRNA-seq data. 
+The primary implementation is in Python 3. To see usage example of DiSiR keep reading, and also look in the Python-module and Analysis directories. Also, the scripts to plot graph representation of resulting ligand-receptor interactions at cell type level are located in  plotting folder. In order to identify ligand-receptor interactions, 'DiSiR_main.py' script in the Python-module directory needs to be run. Below are usage examples for analyzing IL6 signaling pathway in rheumatoid arthritis (RA) Synovium scRNA-seq data and more complex IL1RAP signaling pathway in lung COVID-19 scRNA-seq data. 
 
 ## DiSiR test example use
 
-As an example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL6 pathway)  [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
+### RA data 
+
+As the first example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL6 pathway)  [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
 
 <img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/Ease_of_use.png" width="1000">
 
@@ -51,7 +53,7 @@ metadata_path = indir + '/categorical_coloring_data.json'
 
 ### Input interactions list
 
-`iterations` - In addition, user needs to provide a "comma-separated interaction file" (in our example, "Input_interactions_list.csv") that contains one interaction per line, for example: IL6 | IL6,IL6 | IL6ST. In this example, IL6R and IL6ST are two receptor subunits of IL6. 
+`iterations` - In addition, user needs to provide a "comma-separated interaction file" (in our example, "Input_interactions_list.csv") that contains one interaction per line, for example: IL6|IL6, IL6|IL6ST. In this example, IL6R and IL6ST are two receptor subunits of IL6. 
  
 Also, a path to an "output directory", in order to save the DiSiR results, needs to be identified by users.
 
@@ -72,3 +74,11 @@ DiSiR visualizes output cell-cell interactions in two ways: graph representation
 Heatmap plots illustrate all interactions between different cell types listed in rows and columns of the heatmaps. The thickness of links in graph representation and the color intensity in heatmap representation are associated with the strength of interactions between cell types.
 
 <img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/Results.png" width="1000">
+
+## Covid data
+
+As the second example, we use [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL1RAP pathway)  [here](https://drive.google.com/drive/u/3/folders/14Y09AmiXegRg_LbCnbZyG4bgw2cypZPj).
+
+In thsi example, since IL1RAP signaling pathway includes multiple components with shared subunits, the input "interaction file" contains 7 rows: 1) IL1A|IL1RAP, IL1A|IL1R1 2) IL1B|IL1RAP, IL1B|IL1R1 3) IL1RN|IL1RAP, IL1RN|IL1RL1 4) IL33|IL1RAP, IL33|IL1RL1 5) IL36B|IL1RAP, IL36B|IL1RL2 6) IL36G|IL1RAP, IL36G|IL1RL2 and 7) IL36RN|IL1RAP, IL36RN|IL1RL2. The formats of the other input files are as the previous example. Below are the graph representations of the DiSiR interaction results for IL1RAP signaling pathway between COVID vs. control samples in lung scRNA-seq data. 
+
+<img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/COVID_results.png" width="1000">
