@@ -81,4 +81,4 @@ As the second example, we use [lung COVID-19 scRNA-seq data](https://www.ncbi.nl
 
 In thsi example, since IL1RAP signaling pathway includes multiple components with shared subunits, the input "interaction file" contains 7 rows: 1) IL1A|IL1RAP, IL1A|IL1R1 2) IL1B|IL1RAP, IL1B|IL1R1 3) IL1RN|IL1RAP, IL1RN|IL1RL1 4) IL33|IL1RAP, IL33|IL1RL1 5) IL36B|IL1RAP, IL36B|IL1RL2 6) IL36G|IL1RAP, IL36G|IL1RL2 and 7) IL36RN|IL1RAP, IL36RN|IL1RL2. The formats of the other input files are as the previous example. Below are the graph representations of the DiSiR interaction results for IL1RAP signaling pathway between COVID vs. control samples in lung scRNA-seq data. 
 
-<img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/COVID_results.png" width="1000">
+<img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/COVID_results.png" width="700">
