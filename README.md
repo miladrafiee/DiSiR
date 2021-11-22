@@ -10,7 +10,7 @@ The primary implementation is in Python 3. To see usage example of DiSiR keep re
 
 ## DiSiR test example use
 
-### RA data 
+## 1. RA data 
 
 As the first example, we use [AMP consortium’s Phase 1 RA data from ](https://immunogenomics.io/ampra/) published in [Zhang, Wei et al. 2019](https://www.nature.com/articles/s41590-019-0378-1). Please find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL6 pathway)  [here](https://drive.google.com/drive/u/1/folders/18lTmrqHBRI6xYTDY-DPx3hz2FE3F9G5N).
 
@@ -75,7 +75,7 @@ Heatmap plots illustrate all interactions between different cell types listed in
 
 <img src="https://github.com/miladrafiee/DiSiR/blob/main/Data/ReadMe_data/Results.png" width="1000">
 
-## Covid data
+## 2. Covid data
 
 As the second example, we use [lung COVID-19 scRNA-seq data](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145926) published in [Liao, Liu et al. 2020](https://www.nature.com/articles/s41590-019-0378-1). You can find the processed expression matrix, genes list, meta data and interactions list for this particular example (IL1RAP pathway)  [here](https://drive.google.com/drive/u/3/folders/14Y09AmiXegRg_LbCnbZyG4bgw2cypZPj).
 
